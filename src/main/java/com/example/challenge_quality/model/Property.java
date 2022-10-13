@@ -17,6 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 public class Property {
 
+    private Integer id;
+
     @NotBlank(message = "O nome da propriedade não pode estar vazio")
     @Size(min = 3, max = 30, message = "O comprimento do nome não pode exceder 30 caracteres")
     @Pattern(regexp = "\\b[A-Z][a-z]+(?!\\s)", message = "O nome da propriedade deve começar com uma letra maiúscula")

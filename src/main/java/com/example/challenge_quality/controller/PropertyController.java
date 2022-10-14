@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,10 @@ public class PropertyController {
     @GetMapping("/area/{id}")
     public ResponseEntity<Optional<Double>> getPropertyArea(@PathVariable Integer id){
         return new ResponseEntity<>(service.calculatePropertyArea(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/value/{id}")
+    public ResponseEntity<Optional<BigDecimal>> getPropertyValue(@PathVariable Integer id){
+        return new ResponseEntity<>(service.calculatePropertyValue(id), HttpStatus.OK);
     }
 }

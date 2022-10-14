@@ -13,7 +13,7 @@ public class PropertyRepository {
     Map<Integer, Property> properties = new HashMap<>();
 
     public Property createProperty(Property property) {
-        properties.put(NumberGenerator.getInstance().getNext(), property);
+        properties.put(NumberGenerator.getInstanceProperty().getNext(), property);
         System.out.println(properties);
         return property;
     }

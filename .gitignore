@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### arquivo oculto do mac ###
+.DS_Store

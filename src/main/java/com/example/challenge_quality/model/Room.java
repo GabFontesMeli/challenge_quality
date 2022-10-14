@@ -16,18 +16,18 @@ public class Room {
 
     private Integer id;
 
-    @NotBlank(message = "O campo não pode estar vazio")
-    @Size(min = 3, max = 30, message = "O comprimento do cômodo não pode exceder 30 caracteres")
-    @Pattern(regexp = "\\b[A-Z][a-z]+(?!\\s)", message = "O nome do cômodo deve começar com uma letra maiúscula")
+    @NotBlank(message = "O campo não pode estar vazio.")
+    @Size(min = 3, max = 30, message = "O comprimento do nome do cômodo deve ter entre 3 e 30 caracteres.")
+    @Pattern(regexp = "\\p{Upper}.*", message = "O nome do cômodo deve começar com uma letra maiúscula.")
     private String name;
 
-    @NotNull(message = "A largura do cômodo não pode estar vazia")
+    @NotNull(message = "A largura do cômodo não pode estar vazia.")
     @DecimalMax(value = "25.0")
-    private double width;
+    private Double width;
 
-    @NotNull(message = "O comprimento do cômodo não pode estar vazia")
+    @NotNull(message = "O comprimento do cômodo não pode estar vazia.")
     @DecimalMax(value = "33.0")
-    private double length;
+    private Double length;
 
     @JsonIgnore
     public double getRoomArea() {

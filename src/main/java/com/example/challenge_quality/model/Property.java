@@ -19,13 +19,14 @@ public class Property {
 
     private Integer id;
 
-    @NotBlank(message = "O nome da propriedade não pode estar vazio")
-    @Size(min = 3, max = 30, message = "O comprimento do nome não pode exceder 30 caracteres")
-    @Pattern(regexp = "\\b[A-Z][a-z]+(?!\\s)", message = "O nome da propriedade deve começar com uma letra maiúscula")
+    @NotBlank(message = "O nome da propriedade não pode estar vazio.")
+    @Size(min = 3, max = 30, message = "O comprimento do nome da propriedade deve ter entre 3 e 30 caracteres.")
+    @Pattern(regexp = "\\p{Upper}.*", message = "O nome da propriedade deve começar com uma letra maiúscula.")
     private String name;
 
     @NotBlank(message = "O bairro não pode estar vazio")
-    @Size(min = 3, max = 45, message = "O comprimento do bairro não pode exceder 45 caracteres")
+    @Size(min = 3, max = 45, message = "O comprimento do nome do bairro deve ter entre 3 e 45 caracteres.")
+    @Pattern(regexp = "\\p{Upper}.*", message = "O nome do bairro deve começar com uma letra maiúscula.")
     private String district;
 
     private List<@Valid Room> rooms;

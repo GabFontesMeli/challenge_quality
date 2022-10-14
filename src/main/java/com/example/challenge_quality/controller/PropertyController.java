@@ -1,6 +1,7 @@
 package com.example.challenge_quality.controller;
 
 import com.example.challenge_quality.model.Property;
+import com.example.challenge_quality.model.Room;
 import com.example.challenge_quality.service.IProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,12 @@ public class PropertyController {
         return new ResponseEntity<>(service.createProperty(property), HttpStatus.CREATED);
     }
 
-    @GetMapping("/property-area/{id}")
+    @GetMapping("/biggest-room/{id}")
+    public ResponseEntity<Optional<Room>> getPropertyBiggestRoom(@PathVariable Integer id){
+        return new ResponseEntity<>(service.getPropertyBiggestRoom(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/area/{id}")
     public ResponseEntity<Optional<Double>> getPropertyArea(@PathVariable Integer id){
         return new ResponseEntity<>(service.calculatePropertyArea(id), HttpStatus.OK);
     }

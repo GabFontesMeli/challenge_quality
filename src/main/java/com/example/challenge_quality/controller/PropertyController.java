@@ -13,6 +13,8 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/property")
 public class PropertyController {
@@ -21,7 +23,7 @@ public class PropertyController {
     private IProperty service;
 
     @PostMapping
-    public ResponseEntity<Property> createProperty(@RequestBody Property property){
+    public ResponseEntity<Property> createProperty(@Valid @RequestBody Property property){
         return new ResponseEntity<>(service.createProperty(property), HttpStatus.CREATED);
     }
 

@@ -1,5 +1,6 @@
 package com.example.challenge_quality.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,8 @@ import javax.validation.constraints.*;
 @AllArgsConstructor
 public class Room {
 
+    private Integer id;
+
     @NotBlank(message = "O campo não pode estar vazio")
     @Size(min = 3, max = 30, message = "O comprimento do cômodo não pode exceder 30 caracteres")
     @Pattern(regexp = "\\b[A-Z][a-z]+(?!\\s)", message = "O nome do cômodo deve começar com uma letra maiúscula")
@@ -25,4 +28,9 @@ public class Room {
     @NotNull(message = "O comprimento do cômodo não pode estar vazia")
     @DecimalMax(value = "33.0")
     private double length;
+
+    @JsonIgnore
+    public double getRoomArea() {
+        return width * length;
+    }
 }

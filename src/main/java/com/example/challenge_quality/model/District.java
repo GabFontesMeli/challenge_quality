@@ -17,6 +17,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class District {
 
+    private Integer id;
+
     @NotBlank(message = "O bairro não pode estar vazio")
     @Size(min = 3, max = 45, message = "O comprimento do bairro não pode exceder 45 caracteres")
     private String name;

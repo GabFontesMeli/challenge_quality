@@ -1,0 +1,121 @@
+[ {
+  "id" : 1,
+  "name" : "Mansao MELI",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 3.0,
+    "length" : 6.0
+  }, {
+    "id" : 2,
+    "name" : "Sala",
+    "width" : 5.0,
+    "length" : 7.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 2.0,
+    "length" : 4.0
+  } ]
+}, {
+  "id" : 1,
+  "name" : "Mansao MELI",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 3.0,
+    "length" : 6.0
+  }, {
+    "id" : 2,
+    "name" : "Sala",
+    "width" : 5.0,
+    "length" : 7.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 2.0,
+    "length" : 4.0
+  } ]
+}, {
+  "id" : 1,
+  "name" : "Mansao MELI",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 3.0,
+    "length" : 6.0
+  }, {
+    "id" : 2,
+    "name" : "Sala",
+    "width" : 5.0,
+    "length" : 7.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 2.0,
+    "length" : 4.0
+  } ]
+}, {
+  "id" : 1,
+  "name" : "Mansao MELI",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 3.0,
+    "length" : 6.0
+  }, {
+    "id" : 2,
+    "name" : "Sala",
+    "width" : 5.0,
+    "length" : 7.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 2.0,
+    "length" : 4.0
+  } ]
+}, {
+  "id" : 1,
+  "name" : "Mansao MELI",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 3.0,
+    "length" : 6.0
+  }, {
+    "id" : 2,
+    "name" : "Sala",
+    "width" : 5.0,
+    "length" : 7.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 2.0,
+    "length" : 4.0
+  } ]
+}, {
+  "id" : 1,
+  "name" : "Mansao MELI",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 3.0,
+    "length" : 6.0
+  }, {
+    "id" : 2,
+    "name" : "Sala",
+    "width" : 5.0,
+    "length" : 7.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 2.0,
+    "length" : 4.0
+  } ]
+} ]

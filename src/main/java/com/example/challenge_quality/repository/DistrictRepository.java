@@ -1,11 +1,14 @@
 package com.example.challenge_quality.repository;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.example.challenge_quality.model.Property;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import org.springframework.stereotype.Repository;
 
 import com.example.challenge_quality.model.District;
@@ -39,5 +42,23 @@ public class DistrictRepository {
         return districts.stream()
                 .filter(d -> d.getName().equals(name)).findFirst()
                 .orElseThrow(() -> new RuntimeException("District not found"));
+    }
+
+    /*
+    Esse método cadastra um novo district.
+     */
+    public District createDistrict(District newDistrict) {
+        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        List<District> districts = getAllDistricts();
+        newDistrict.setId(districts.size()+1);
+        districts = new ArrayList<>(districts); // reinstanciando a lista que era imutavel, para uma lista igual, só que mutavel.
+        districts.add(newDistrict);
+        try {
+            writer.writeValue(new File(path), districts);
+        }catch (Exception ex) {
+            throw new RuntimeException(ex.getMessage());
+        }
+
+        return newDistrict;
     }
 }

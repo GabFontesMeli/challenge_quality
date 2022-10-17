@@ -95,4 +95,21 @@ public class PropertyControllerTests extends BasePropertyTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json(jsonExpected));
     }
+
+    @Test
+    void getPropertyAreaShouldReturnPropertyArea() throws Exception {
+        Double expectedArea = 14.0;
+        BDDMockito.given(service.calculatePropertyArea(anyInt()))
+                .willReturn(Optional.of(expectedArea));
+
+        String jsonExpected = objectMapper.writeValueAsString(expectedArea);
+
+        this.mockMvc
+                .perform(
+                        get("/property/area/{id}", 1)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andExpect(status().isOk())
+                .andExpect(content().json(jsonExpected));
+    }
 }

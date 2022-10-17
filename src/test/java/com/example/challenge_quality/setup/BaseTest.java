@@ -12,7 +12,7 @@ import com.example.challenge_quality.model.Room;
 
 
 
-abstract public class BasePropertyTest {
+abstract public class BaseTest {
 
     protected Property property;
 

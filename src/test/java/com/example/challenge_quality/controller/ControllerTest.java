@@ -12,9 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import com.example.challenge_quality.dto.RoomDTO;
-import com.example.challenge_quality.model.Room;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,17 +24,16 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.service.PropertyService;
-import com.example.challenge_quality.setup.BasePropertyTest;
+import com.example.challenge_quality.setup.BaseTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 @WebMvcTest(PropertyController.class)
-public class PropertyControllerTests extends BasePropertyTest {
+public class ControllerTest extends BaseTest {
     @Autowired
     private MockMvc mockMvc;
 

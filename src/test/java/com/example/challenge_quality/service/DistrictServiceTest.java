@@ -1,7 +1,6 @@
 package com.example.challenge_quality.service;
 
 import com.example.challenge_quality.model.District;
-import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.repository.DistrictRepository;
 import com.example.challenge_quality.setup.BaseTest;
 import org.junit.jupiter.api.Test;
@@ -18,7 +17,7 @@ import static org.mockito.ArgumentMatchers.any;
 public class DistrictServiceTest extends BaseTest {
 
     @InjectMocks
-    private DistrictServiceImpl service;
+    private DistrictService service;
 
     @Mock
     private DistrictRepository repository;

@@ -26,7 +26,7 @@ import com.example.challenge_quality.setup.BaseTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
-public class ServiceTest extends BaseTest {
+public class PropertyServiceTest extends BaseTest {
     
     @InjectMocks
     private PropertyService service;

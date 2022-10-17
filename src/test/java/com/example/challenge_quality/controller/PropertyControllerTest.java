@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Optional;
 
 @WebMvcTest(PropertyController.class)
-public class ControllerTest extends BaseTest {
+public class PropertyControllerTest extends BaseTest {
     @Autowired
     private MockMvc mockMvc;
 

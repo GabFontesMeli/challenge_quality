@@ -18,4 +18,24 @@
     "width" : 2.0,
     "length" : 4.0
   } ]
+}, {
+  "id" : 1,
+  "name" : "Melicidade",
+  "district" : "Lapa",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 2.0,
+    "length" : 2.0
+  }, {
+    "id" : 2,
+    "name" : "Cozinha",
+    "width" : 3.0,
+    "length" : 3.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 1.0,
+    "length" : 1.0
+  } ]
 } ]

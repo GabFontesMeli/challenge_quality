@@ -70,9 +70,9 @@ public class PropertyServiceTests {
     @Test
     void calculatePropertyValueShouldReturnCorrectPropertyValue() {
 
-        Double propertyArea = 14.0;
         BDDMockito.given(repository.getProperty(anyInt())).willReturn(property);
         BDDMockito.given(districtRepository.getDistrictByName(anyString())).willReturn(district);
+        Double propertyArea = 14.0;
         Optional<BigDecimal> expected = Optional.of(district.getValueDistrictM2()
             .multiply(BigDecimal.valueOf(propertyArea)));
 

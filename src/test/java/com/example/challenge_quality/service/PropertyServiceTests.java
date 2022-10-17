@@ -23,14 +23,14 @@ import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.model.Room;
 import com.example.challenge_quality.repository.DistrictRepository;
 import com.example.challenge_quality.repository.PropertyRepository;
-import com.example.challenge_quality.setup.SetupProperty;
+import com.example.challenge_quality.setup.BasePropertyTest;
 
 import lombok.extern.log4j.Log4j2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(MockitoExtension.class)
-public class PropertyServiceTests extends SetupProperty {
+public class PropertyServiceTests extends BasePropertyTest {
     
     @InjectMocks
     private PropertyService service;

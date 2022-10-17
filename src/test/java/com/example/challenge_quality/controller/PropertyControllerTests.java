@@ -7,10 +7,10 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import javax.print.attribute.standard.Media;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
+import com.example.challenge_quality.dto.RoomDTO;
 import com.example.challenge_quality.model.Room;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
@@ -25,6 +25,9 @@ import com.example.challenge_quality.service.PropertyService;
 import com.example.challenge_quality.setup.BasePropertyTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @WebMvcTest(PropertyController.class)
@@ -66,6 +69,27 @@ public class PropertyControllerTests extends BasePropertyTest {
         this.mockMvc
                 .perform(
                         get("/property/biggest-room/{id}", 1)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andExpect(status().isOk())
+                .andExpect(content().json(jsonExpected));
+    }
+
+    @Test
+    void getRoomsAreaShouldReturnRoomsArea() throws Exception {
+        List<RoomDTO> expectedList = new ArrayList<>();
+        expectedList.add(new RoomDTO(property.getRooms().get(0)));
+        expectedList.add(new RoomDTO(property.getRooms().get(1)));
+        expectedList.add(new RoomDTO(property.getRooms().get(2)));
+
+        BDDMockito.given(service.getRoomsArea(anyInt()))
+                .willReturn(expectedList);
+
+        String jsonExpected = objectMapper.writeValueAsString(expectedList);
+
+        this.mockMvc
+                .perform(
+                        get("/property/rooms-area/{id}", 1)
                                 .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andExpect(status().isOk())

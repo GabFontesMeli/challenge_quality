@@ -1,11 +1,9 @@
 package com.example.challenge_quality.repository;
 
 import com.example.challenge_quality.model.Property;
-import com.example.challenge_quality.util.NumberGenerator;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;

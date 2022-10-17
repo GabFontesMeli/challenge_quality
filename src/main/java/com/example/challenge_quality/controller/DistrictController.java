@@ -1,7 +1,6 @@
 package com.example.challenge_quality.controller;
 
 import com.example.challenge_quality.model.District;
-import com.example.challenge_quality.service.DistrictServiceImpl;
 import com.example.challenge_quality.service.IDistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,0 +1,30 @@
+[ {
+  "id" : 1,
+  "name" : "Lapa",
+  "valueDistrictM2" : 100.00
+}, {
+  "id" : 2,
+  "name" : "Rocinha",
+  "valueDistrictM2" : 90.00
+}, {
+  "id" : 3,
+  "name" : "Copacabana",
+  "valueDistrictM2" : 10000.00
+}, {
+  "id" : 4,
+  "name" : "Liberdade",
+  "valueDistrictM2" : 250.00
+}, {
+  "id" : 5,
+  "name" : "Melicidade",
+  "valueDistrictM2" : 4000.00
+}, {
+  "id" : 6,
+  "name" : "Gleba Palhano",
+  "valueDistrictM2" : 5000.00
+}, {
+  "id" : 7,
+  "name" : "Aurora",
+  "valueDistrictM2" : 300.12
+}
+]

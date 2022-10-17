@@ -23,13 +23,14 @@ import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.model.Room;
 import com.example.challenge_quality.repository.DistrictRepository;
 import com.example.challenge_quality.repository.PropertyRepository;
+import com.example.challenge_quality.setup.SetupProperty;
 
 import lombok.extern.log4j.Log4j2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(MockitoExtension.class)
-public class PropertyServiceTests {
+public class PropertyServiceTests extends SetupProperty {
     
     @InjectMocks
     private PropertyService service;
@@ -41,19 +42,6 @@ public class PropertyServiceTests {
     @Mock
     private DistrictRepository districtRepository;
 
-    private Property property;
-
-    private District district;
-
-    @BeforeEach
-    void setup() {
-        List<Room> rooms = new ArrayList<>();
-        rooms.add(new Room(1, "Quarto", 2.0, 2.0));
-        rooms.add(new Room(2, "Cozinha", 3.0, 3.0));
-        rooms.add(new Room(3, "Banheiro", 1.0, 1.0));
-        property = new Property(1, "Melicidade", "Lapa", rooms);
-        district = new District(1, "Lapa", new BigDecimal("10.00"));
-    }
 
     @Test
     void createPropertyShouldReturnCreatedProperty() {

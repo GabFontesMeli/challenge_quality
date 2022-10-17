@@ -3,14 +3,11 @@ package com.example.challenge_quality.dto;
 
 import com.example.challenge_quality.model.Room;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class RoomDTO {
     private String name;
     private Double area;

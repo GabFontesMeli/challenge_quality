@@ -46,4 +46,5 @@ public class PropertyController {
     public ResponseEntity<Optional<BigDecimal>> getPropertyValue(@PathVariable Integer id){
         return new ResponseEntity<>(service.calculatePropertyValue(id), HttpStatus.OK);
     }
+
 }

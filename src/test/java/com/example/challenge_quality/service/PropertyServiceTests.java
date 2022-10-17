@@ -1,5 +1,6 @@
 package com.example.challenge_quality.service;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 
@@ -55,6 +56,14 @@ public class PropertyServiceTests {
     }
 
     @Test
+    void createPropertyShouldReturnCreatedProperty() {
+       BDDMockito.given(repository.createProperty(any(Property.class))).willReturn(property);
+       Property result = service.createProperty(property);
+
+       assertThat(result).isEqualTo(property);
+    }
+
+    @Test
     void getRoomsAreaShouldReturnListOfRoomDTO() {
         BDDMockito.given(repository.getProperty(anyInt())).willReturn(property);
         List<RoomDTO> result = new ArrayList<>();
@@ -65,6 +74,17 @@ public class PropertyServiceTests {
         List<RoomDTO> rooms = service.getRoomsArea(1);
 
         assertThat(rooms).hasSameElementsAs(result);
+    }
+
+    @Test
+    void calculatePropertyAreaShouldReturnCorrectPropertyArea() {
+
+        Optional<Double> propertyArea = Optional.of(14.0);
+        BDDMockito.given(repository.getProperty(anyInt())).willReturn(property);
+        
+        Optional<Double> result = service.calculatePropertyArea(1);
+
+        assertThat(result).isEqualTo(propertyArea);
     }
 
     @Test
@@ -80,4 +100,18 @@ public class PropertyServiceTests {
 
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void getPropertyBiggestRoomShouldReturnPropertyBiggestRoom() {
+
+        Optional<Room> biggestRoom = Optional.of(property.getRooms().get(1));
+        BDDMockito.given(repository.getProperty(anyInt())).willReturn(property);
+
+        Optional<Room> result = service.getPropertyBiggestRoom(1);
+
+        assertThat(result).isEqualTo(biggestRoom);
+    }
+    
+
+    
 }

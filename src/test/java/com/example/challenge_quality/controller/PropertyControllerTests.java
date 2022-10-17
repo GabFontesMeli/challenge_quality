@@ -9,9 +9,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import com.example.challenge_quality.dto.RoomDTO;
 import com.example.challenge_quality.model.Room;
+
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +23,13 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+
 import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.service.PropertyService;
 import com.example.challenge_quality.setup.BasePropertyTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -109,6 +114,24 @@ public class PropertyControllerTests extends BasePropertyTest {
                         get("/property/area/{id}", 1)
                                 .contentType(MediaType.APPLICATION_JSON)
                 )
+                .andExpect(status().isOk())
+                .andExpect(content().json(jsonExpected));
+    }
+
+    @Test
+    void getPropertyValueShouldReturnPropertyValue() throws Exception {
+        Optional<BigDecimal> expectedValue = Optional.of(new BigDecimal("14.0"));
+
+        BDDMockito.given(service.calculatePropertyValue(anyInt()))
+        .willReturn(expectedValue);
+
+        String jsonExpected = objectMapper.writeValueAsString(expectedValue);
+
+        this.mockMvc
+                .perform(
+                        get("/property/value/{id}", 1)
+                                .contentType(MediaType.APPLICATION_JSON)
+                        )
                 .andExpect(status().isOk())
                 .andExpect(content().json(jsonExpected));
     }

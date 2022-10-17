@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
@@ -18,19 +17,16 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.example.challenge_quality.dto.RoomDTO;
-import com.example.challenge_quality.model.District;
 import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.model.Room;
 import com.example.challenge_quality.repository.DistrictRepository;
 import com.example.challenge_quality.repository.PropertyRepository;
-import com.example.challenge_quality.setup.BasePropertyTest;
-
-import lombok.extern.log4j.Log4j2;
+import com.example.challenge_quality.setup.BaseTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @ExtendWith(MockitoExtension.class)
-public class PropertyServiceTests extends BasePropertyTest {
+public class PropertyServiceTest extends BaseTest {
     
     @InjectMocks
     private PropertyService service;

@@ -40,7 +40,7 @@ public class DistrictRepository {
         List<District> districts = getAllDistricts();
         return districts.stream()
                 .filter(d -> d.getName().equals(name)).findFirst()
-                .orElseThrow(() -> new RuntimeException("District not found"));
+                .orElse(null);
     }
 
     /*

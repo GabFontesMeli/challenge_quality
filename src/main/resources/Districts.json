@@ -26,5 +26,8 @@
   "id" : 7,
   "name" : "Aurora",
   "valueDistrictM2" : 300.12
-}
-]
+}, {
+  "id" : 8,
+  "name" : "Adsdas",
+  "valueDistrictM2" : 12345678911.12
+} ]

@@ -34,4 +34,16 @@ public class HandleExceptions {
         System.out.println("Erro desconhecido: " + e.getMessage());
         return new ResponseEntity<>(exceptionDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(DistrictAlreadyExistsException.class)
+    public ResponseEntity<ExceptionDetails> handleException(DistrictAlreadyExistsException ex) {
+        ExceptionDetails exceptionDetails = ExceptionDetails.builder()
+                .title("Bad request")
+                .message(ex.getMessage())
+                .status(HttpStatus.BAD_REQUEST.value())
+                .timeStamp(LocalDateTime.now())
+                .build();
+
+        return new ResponseEntity<>(exceptionDetails, HttpStatus.BAD_REQUEST);
+    }
 }

@@ -1,32 +1,37 @@
 package com.example.challenge_quality.service;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
 import com.example.challenge_quality.dto.RoomDTO;
 import com.example.challenge_quality.model.Property;
 import com.example.challenge_quality.model.Room;
 import com.example.challenge_quality.repository.DistrictRepository;
 import com.example.challenge_quality.repository.PropertyRepository;
-import com.example.challenge_quality.setup.BasePropertyTest;
-
+import com.example.challenge_quality.setup.BaseTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 @ExtendWith(MockitoExtension.class)
-public class PropertyServiceTests extends BasePropertyTest {
+public class PropertyServiceTest extends BaseTest {
     
     @InjectMocks
     private PropertyService service;
 
+    // TODO: alterar nome para propertyrepository
     @Mock
     private PropertyRepository repository;
 
@@ -69,9 +74,9 @@ public class PropertyServiceTests extends BasePropertyTest {
     @Test
     void calculatePropertyValueShouldReturnCorrectPropertyValue() {
 
+        Double propertyArea = 14.0;
         BDDMockito.given(repository.getProperty(anyInt())).willReturn(property);
         BDDMockito.given(districtRepository.getDistrictByName(anyString())).willReturn(district);
-        Double propertyArea = 14.0;
         Optional<BigDecimal> expected = Optional.of(district.getValueDistrictM2()
             .multiply(BigDecimal.valueOf(propertyArea)));
 

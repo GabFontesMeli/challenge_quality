@@ -44,4 +44,24 @@ public class DistrictIntegrationTests {
                 .andExpect(status().isCreated())
                 .andExpect(content().json(objectMapper.writeValueAsString(expectedDistrict)));
     }
+
+    @Test
+    void createDistrictWithSameNameReturnBadRequest() throws Exception {
+        int randomNumber = (int) (Math.random() * 9999);
+        District postDistrict = new District(null, "Cidade Grande" + randomNumber, new BigDecimal(1000));
+        District expectedDistrict = new District(null, "Cidade Grande" + randomNumber, new BigDecimal(1000));
+        int id = districtRepository.getAllDistricts().size() + 1;
+        expectedDistrict.setId(id);
+
+        mockMvc.perform(post("/district")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(postDistrict)))
+                .andExpect(status().isCreated())
+                .andExpect(content().json(objectMapper.writeValueAsString(expectedDistrict)));
+
+        mockMvc.perform(post("/district")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(postDistrict)))
+                .andExpect(status().isBadRequest());
+    }
 }

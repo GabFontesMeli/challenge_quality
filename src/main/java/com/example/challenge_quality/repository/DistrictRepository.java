@@ -29,13 +29,6 @@ public class DistrictRepository {
         return districts;
     }
 
-    public District getDistrict(Integer id) {
-        List<District> districts = getAllDistricts();
-        return districts.stream()
-                .filter(p -> p.getId() == id).findFirst()
-                .orElseThrow(() -> new RuntimeException("Property not found"));
-    }
-
     public District getDistrictByName(String name) {
         List<District> districts = getAllDistricts();
         return districts.stream()

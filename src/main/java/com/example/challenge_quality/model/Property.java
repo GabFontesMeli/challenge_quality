@@ -2,9 +2,7 @@ package com.example.challenge_quality.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -30,4 +28,10 @@ public class Property {
     private String district;
 
     private List<@Valid Room> rooms;
+
+    public Property(String name, String district, List<Room> rooms) {
+        this.name = name;
+        this.district = district;
+        this.rooms = rooms;
+    }
 }

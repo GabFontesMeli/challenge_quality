@@ -7,15 +7,45 @@
     "name" : "Quarto",
     "width" : 3.0,
     "length" : 6.0
+  } ]
+}, {
+  "id" : 2,
+  "name" : "Melicidade",
+  "district" : "Melicidade30",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
+    "width" : 2.0,
+    "length" : 2.0
   }, {
     "id" : 2,
-    "name" : "Sala",
-    "width" : 5.0,
-    "length" : 7.0
+    "name" : "Cozinha",
+    "width" : 3.0,
+    "length" : 3.0
   }, {
     "id" : 3,
     "name" : "Banheiro",
+    "width" : 1.0,
+    "length" : 1.0
+  } ]
+}, {
+  "id" : 3,
+  "name" : "Melicidade",
+  "district" : "Melicidade",
+  "rooms" : [ {
+    "id" : 1,
+    "name" : "Quarto",
     "width" : 2.0,
-    "length" : 4.0
+    "length" : 2.0
+  }, {
+    "id" : 2,
+    "name" : "Cozinha",
+    "width" : 3.0,
+    "length" : 3.0
+  }, {
+    "id" : 3,
+    "name" : "Banheiro",
+    "width" : 1.0,
+    "length" : 1.0
   } ]
 } ]

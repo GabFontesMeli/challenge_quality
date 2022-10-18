@@ -20,7 +20,7 @@ public class PropertyRepository {
         try {
             properties = Arrays.asList(mapper.readValue(new File(path), Property[].class));
         } catch (Exception ex) {
-            throw new RuntimeException(ex.getMessage());
+            throw new RuntimeException("erro ao ler o arquivo");
         }
 
         return properties;
@@ -31,6 +31,10 @@ public class PropertyRepository {
         List<Property> properties = getAll();
 
         properties = new ArrayList<>(properties);
+
+        int id = properties.size() + 1;
+
+        newProperty.setId(id);
 
         properties.add(newProperty);
 

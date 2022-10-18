@@ -93,7 +93,7 @@ public class PropertyIntegrationTests {
 
         this.mockMvc
             .perform(
-                get("/property/value/{id}", createdProperty.getId() - 1)
+                get("/property/value/{id}", createdProperty.getId())
                 )
             .andExpect(status().isOk())
             .andExpect(content().json(jsonExpected));

@@ -28,4 +28,10 @@ public class Property {
     private String district;
 
     private List<@Valid Room> rooms;
+
+    public Property(String name, String district, List<Room> rooms) {
+        this.name = name;
+        this.district = district;
+        this.rooms = rooms;
+    }
 }

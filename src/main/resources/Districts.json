@@ -28,70 +28,18 @@
   "valueDistrictM2" : 300.12
 }, {
   "id" : 8,
-  "name" : "Melicidade797",
+  "name" : "Melicidade30",
   "valueDistrictM2" : 1.00
 }, {
   "id" : 9,
-  "name" : "Melicidade304",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 10,
-  "name" : "Melicidade858",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 11,
-  "name" : "Melicidade672",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 12,
-  "name" : "Melicidade478",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 13,
-  "name" : "Melicidade464",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 14,
-  "name" : "Melicidade607",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 15,
-  "name" : "Melicidade628",
-  "valueDistrictM2" : 20.00
-}, {
-  "id" : 16,
-  "name" : "Melicidade843",
-  "valueDistrictM2" : 20.00
-}, {
-  "id" : 17,
-  "name" : "Melicidade601",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 18,
-  "name" : "Melicidade105",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 19,
-  "name" : "Melicidade955",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 20,
-  "name" : "Melicidade654",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 21,
-  "name" : "Melicidade706",
-  "valueDistrictM2" : 1.00
-}, {
-  "id" : 22,
-  "name" : "Copacabana",
+  "name" : "Cidade Grande",
   "valueDistrictM2" : 1000
 }, {
-  "id" : 23,
-  "name" : "Melicidade31",
-  "valueDistrictM2" : 1.00
+  "id" : 10,
+  "name" : "Cidade Grande5980",
+  "valueDistrictM2" : 1000
 }, {
-  "id" : 24,
-  "name" : "Copacabana",
+  "id" : 11,
+  "name" : "Cidade Grande4452",
   "valueDistrictM2" : 1000
 } ]

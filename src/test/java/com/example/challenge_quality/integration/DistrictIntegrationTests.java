@@ -32,8 +32,9 @@ public class DistrictIntegrationTests {
 
     @Test
     void createDistrictShouldReturnDistrict() throws Exception {
-        District postDistrict = new District(null, "Copacabana", new BigDecimal(1000));
-        District expectedDistrict = new District(null, "Copacabana", new BigDecimal(1000));
+        int randomNumber = (int) (Math.random() * 9999);
+        District postDistrict = new District(null, "Cidade Grande" + randomNumber, new BigDecimal(1000));
+        District expectedDistrict = new District(null, "Cidade Grande" + randomNumber, new BigDecimal(1000));
         int id = districtRepository.getAllDistricts().size() + 1;
         expectedDistrict.setId(id);
 

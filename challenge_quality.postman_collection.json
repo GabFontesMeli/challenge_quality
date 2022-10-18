@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "2a160400-8c32-4207-8c55-e694e5c39d42",
+		"name": "challenge_quality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createProperty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"Mansao MELI\",\n    \"district\": \"Melicidade\",\n    \"rooms\": [\n        {\n            \"id\": 1,\n            \"name\": \"Quarto\",\n            \"width\": 3.0,\n            \"length\": 6.0 \n        },\n        {\n            \"id\": 2,\n            \"name\": \"Sala\",\n            \"width\": 5.0,\n            \"length\": 7.0 \n        },\n        {\n            \"id\": 3,\n            \"name\": \"Banheiro\",\n            \"width\": 2.0,\n            \"length\": 4.0 \n        }\n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/property",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"property"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createDistrict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Teste\",\n    \"valueDistrictM2\": 111.12\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/district",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"district"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPropertyArea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/property/area/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"property",
+						"area",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBiggestRoom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/property/biggest-room/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"property",
+						"biggest-room",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRoomsArea",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/property/rooms-area/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"property",
+						"rooms-area",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPropertyValue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/property/value/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"property",
+						"value",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

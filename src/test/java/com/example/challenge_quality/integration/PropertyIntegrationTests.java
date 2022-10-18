@@ -41,11 +41,11 @@ public class PropertyIntegrationTests {
     @Autowired
     private DistrictRepository districtRepository;
 
-    Property getNewProperty(String district) {
+    Property getNewProperty(String nameDistrict) {
         Property property;
         String districtName = "Melicidade";
-        if (district != null) {
-            districtName = district;
+        if (nameDistrict != null) {
+            districtName = nameDistrict;
         }
         List<Room> rooms = new ArrayList<>();
         rooms.add(new Room(1, "Quarto", 2.0, 2.0));

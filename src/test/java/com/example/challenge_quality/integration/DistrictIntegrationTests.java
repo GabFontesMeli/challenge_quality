@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.example.challenge_quality.model.District;
 import com.example.challenge_quality.repository.DistrictRepository;
-import com.example.challenge_quality.repository.PropertyRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -29,9 +28,6 @@ public class DistrictIntegrationTests {
     private ObjectMapper objectMapper;
 
     @Autowired
-    private PropertyRepository propertyRepository;
-
-    @Autowired
     private DistrictRepository districtRepository;
 
     @Test
@@ -40,7 +36,7 @@ public class DistrictIntegrationTests {
         District expectedDistrict = new District(null, "Copacabana", new BigDecimal(1000));
         int id = districtRepository.getAllDistricts().size() + 1;
         expectedDistrict.setId(id);
-        
+
         mockMvc.perform(post("/district")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(postDistrict)))
